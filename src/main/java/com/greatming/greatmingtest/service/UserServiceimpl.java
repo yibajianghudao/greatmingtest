@@ -1,19 +1,10 @@
 package com.greatming.greatmingtest.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import com.greatming.greatmingtest.dao.User;
-import com.greatming.greatmingtest.dao.UserRepository;
+import com.greatming.greatmingtest.dto.UserDTO;
 
-@Service
-public class UserServiceimpl implements UserService {
+public interface UserServiceimpl {
     
-    @Autowired
-    private UserRepository userRepository;
-
-    @Override
-    public User getUserById(long id) {
-        return userRepository.findById(id).orElseThrow(RuntimeException::new);
-    }
+    public UserDTO getUserById(long id);
+    public Long addNewUser(UserDTO userDTO);
 }

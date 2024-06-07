@@ -12,6 +12,8 @@ import lombok.Setter;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
+import java.sql.Timestamp;
+
 
 // 数据库表映射类
 @Entity
@@ -53,9 +55,9 @@ public class User {
     private String enrollmentTime;
 
     @Column(name="createtime")
-    private String createtime;
+    private Timestamp createtime;
 
     @Column(name="updatetime")
-    private String updatetime;
+    private Timestamp updatetime;
 
 }
